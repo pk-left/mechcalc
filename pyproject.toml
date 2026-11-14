@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mechcalc"
+version = "0.1.0"
+description = "Unit conversions and everyday mechanical engineering formulas"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Dodou Njie (PK)" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30"]
+dev = ["pytest"]
+
+[project.scripts]
+mechcalc = "mechcalc.cli:main"
+
+[tool.setuptools]
+packages = ["mechcalc"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
